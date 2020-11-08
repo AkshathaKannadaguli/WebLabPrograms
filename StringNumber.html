@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab Program 4</title>
+</head>
+
+<body>
+    <script>
+        var stringInput = prompt("Enter the input:", " ");
+        var copyString = stringInput
+        if (!(isNaN(stringInput))) {
+            var num, rev = 0,
+                rem;
+            num = parseInt(stringInput);
+            while (num != 0) {
+                rem = num % 10;
+                num = parseInt(num / 10);
+                rev = rev * 10 + rem;
+            }
+            alert("Reverse of " + stringInput + " is " + rev)
+        } else {
+            stringInput = stringInput.toUpperCase();
+            for (var i = 0; i < stringInput.length; i++) {
+                var charString = stringInput.charAt(i);
+                if (charString == 'A' || charString == 'E' || charString == 'I' || charString == 'O' || charString == 'U')
+                    break;
+            }
+            if (i < stringInput.length)
+                alert("The position of left most vowel in the string " + copyString + " is " + (i + 1))
+            else
+                alert("No vowel found in the entered string ");
+        }
+    </script>
+</body>
+
+</html>
